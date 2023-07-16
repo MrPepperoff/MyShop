@@ -1,0 +1,159 @@
+.r {
+  background: #faa; }
+
+.g {
+  background: #afa; }
+
+.b {
+  background: #aaf; }
+
+html {
+  font-size: 10px;
+  height: 100%; }
+
+body {
+  height: 100%;
+  background: #ddd;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; }
+
+.header {
+  background: #eee; }
+  .header__center {
+    padding: 10px 0; }
+
+main {
+  flex-grow: 1; }
+
+:root {
+  --orange:#fb6409;
+  --orange1:#fa5a0c; }
+
+.fa-truck {
+  color: var(--orange1); }
+
+.delivery_wrap {
+  background: #fff;
+  text-align: center; }
+
+.logo {
+  text-align: center; }
+
+.time {
+  font-size: 1.6rem; }
+
+.time p {
+  margin: 0; }
+
+.time span {
+  font-weight: bold; }
+
+.delivery span {
+  font-weight: 600;
+  font-size: 1.6rem; }
+
+.delivery span:nth-child(2) {
+  color: #999; }
+
+.delivery span:nth-child(3) {
+  color: var(--orange); }
+
+.phone .number {
+  font-size: 4rem;
+  color: var(--orange); }
+
+.phone .number .fa-phone {
+  font-size: 3rem;
+  color: #999;
+  position: relative;
+  top: -0.3rem; }
+
+.soc ul,
+nav ul {
+  padding: 0; }
+
+nav ul li {
+  list-style: none;
+  padding: 0 10px;
+  margin: 0; }
+
+.soc ul li,
+header nav ul li {
+  display: inline-block; }
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.6rem; }
+
+.soc ul {
+  text-align: center;
+  margin: 5px 0; }
+
+.soc ul li {
+  display: inline-flex;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 0;
+  text-align: center;
+  border: 1px solid var(--orange);
+  border-radius: 50%;
+  overflow: hidden; }
+
+.soc ul li a {
+  display: block;
+  justify-items: center;
+  text-decoration: none;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  color: var(--orange);
+  font-size: 1.6rem;
+  line-height: 3.6rem; }
+
+.search {
+  display: flex; }
+
+.search input {
+  height: 3.6rem;
+  margin: 5px 0;
+  width: 90%;
+  border-radius: 20px 0 0 20px;
+  border: 2px inset #ddd;
+  outline: none; }
+
+.search button {
+  height: 3.6rem;
+  margin: 5px 0;
+  width: 10%;
+  font-size: 1.6rem;
+  border: 2px outset #ddd;
+  border-radius: 0 20px 20px 0; }
+
+.search button:active {
+  background: #aaa;
+  border: 2px inset #ddd; }
+
+.cart {
+  color: #fff;
+  text-align: center;
+  padding-left: 0; }
+
+.cart p {
+  background: var(--orange);
+  height: 100%;
+  font-size: 1.6rem;
+  padding: 5px 0;
+  margin: 0px 40px 0 0;
+  line-height: 3.6rem;
+  border-radius: 10px; }
+
+.cart p span {
+  display: inline-block;
+  background: #333;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  width: 3.6rem;
+  height: 3.6rem; }
