@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="template" client="site">
+	
 	<name>tamplate</name>
 	<version>1.0.0</version>
 	<creationDate>10.07.2023</creationDate>

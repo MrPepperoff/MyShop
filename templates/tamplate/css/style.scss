@@ -72,6 +72,8 @@ body{
 .soc{
 	&__list{
 		// margin: 5px 0;
+		padding: 0;
+		margin: 0;
 	}
 	&__item{
 		display: inline-flex;
@@ -104,15 +106,13 @@ body{
 	color:var(--orange1);
 }
 
-
-
-
 .delivery{
 	background: #fff;
 	text-align: center;
+	padding: 5px;
 	&__item span{
 		font-weight: 600;
-		font-size: 1.6rem;
+		font-size: 2rem;
 	}
 	&__item span:nth-child(1){
 
@@ -132,6 +132,25 @@ body{
 		list-style: none;
 		padding: 0 10px;
 		margin: 0;		
+	}
+}
+#navbarSupportedContent{
+	background: transparent;
+	& .nav{
+		width: 100%;
+		&-item{
+			margin-right: 10px;
+			border-bottom: 3px solid transparent;
+			&.active{
+					border-bottom: 3px solid var(--orange);
+				}
+			& a{
+				color: #000;
+				text-decoration: none;
+				font-size: 1.6rem;
+				
+			}
+		}
 	}
 }
 .link{
@@ -176,7 +195,9 @@ body{
 		height: 100%;
 		font-size: 1.6rem;
 		padding: 5px 0;
-		margin: 0px 40px 0 0;
+		width: 175px;
+		height: 47px;
+		margin: 0px auto;
 		line-height: 3.6rem;
 		border-radius: 10px;
 		&__number-of-products{
@@ -195,6 +216,22 @@ body{
 .footer{
 	background: #eee;
 	padding: 20px 0;
+	&__searth{
+		width: 100%;
+		text-align: center;
+		& input{
+			border-radius: 0px;
+			width: 90%;
+			margin: 30px auto 0;
+			
+		}
+		& button{
+			margin: 0px auto;
+			margin-top: 0;
+			border-radius: 0px;
+			width: 90%;
+		}
+	}
 	&__phone{
 		& div{
 			font-size: 2rem;
