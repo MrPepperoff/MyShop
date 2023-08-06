@@ -9,7 +9,10 @@ $doc = JFactory::getDocument();
 $doc->addStyleSheet(JUri::base().'templates/'.$doc->template.'/css/bootstrap.min.css');
 $doc->addStyleSheet(JUri::base().'templates/'.$doc->template.'/css/style.css');
 $doc->addStyleSheet(JUri::base().'templates/'.$doc->template.'/css/all.min.css');
+$doc->addStyleSheet(JUri::base().'templates/'.$doc->template.'/css/fonts.css');
 
+//scripts
+$doc->addScript(JUri::base().'templates/'.$doc->template.'/js/myscript.js');
 ?>
 <!doctype html>
 
@@ -41,9 +44,11 @@ $doc->addStyleSheet(JUri::base().'templates/'.$doc->template.'/css/all.min.css')
 	</div>
 	<header class="header">
 		<div class="container header__top">
-			<div class="row justify-content-center ">
+			<div class="row justify-content-between">
 				<div class="col-3 header__top__logo">
-					<img src="templates/<?php echo $this->template; ?>/images/logo.png" alt="logo">
+					<a href="/">
+						<img src="templates/<?php echo $this->template; ?>/images/logo.png" alt="logo">
+					</a>
 				</div>
 				<div class="col-6 header__top__phone phone">
 					<div class="phone__number"><i class="fa-solid fa-phone"></i> 8(800)000-00-00</div>
@@ -56,7 +61,7 @@ $doc->addStyleSheet(JUri::base().'templates/'.$doc->template.'/css/all.min.css')
 							<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							
 								<?php if($doc-> countModules('position-0')) :?>
-									<jdoc:include type="modules" name="position-0" style="xhtml" class="menu__item"/>
+									<jdoc:include type="modules" name="position-0" style="xhtml" />
 								<?php endif; ?>
 							</div>
 						</div>
@@ -70,7 +75,7 @@ $doc->addStyleSheet(JUri::base().'templates/'.$doc->template.'/css/all.min.css')
 			</div>
 		</div>
 		<div class="container header__center">
-			<div class="row justify-content-center">
+			<div class="row justify-content-between flex_add">
 				<div class="col-3 header__top__soc soc">
 					<ul class="soc__list">
 						<li class="soc__item"><a href="#" class="soc__link"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -79,79 +84,76 @@ $doc->addStyleSheet(JUri::base().'templates/'.$doc->template.'/css/all.min.css')
 					</ul>
 				</div>
 				<div class="col-6 search">
-
-					<input type="text" class="search__input" placeholder="Поиск...">
-					<button class="search__button">
-						<i class="fa-solid fa-magnifying-glass"></i>
-					</button>
+					<?php if($doc-> countModules('position-1')) :?>
+						<jdoc:include type="modules" name="position-1" style="xhtml"/>
+					<?php endif; ?>
 				</div>
-				<div class="col-2 cart ">
-					<p class="cart__info">
-						<i class="fa-solid fa-cart-shopping cart__info__text"></i> товаров:
-						<span class="cart__info__number-of-products">0</span>
-					</p>
-					
+				<div class="col-2 cart">
+					<?php if($doc-> countModules('position-2')) :?>
+						<jdoc:include type="modules" name="position-2" style="xhtml"/>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
 	</header>
-	<main class="main">
-		<section class="main__first">
-			<div class="container">
-				<div class="row">
-					<div class="col">
+	<div class="bac">
+		<div class="container">
+			<div class="row">
+				<nav class="col-lg-3 col-md-12 col-sm-12 col-xs-12 left_block">
+					<?php if($doc-> countModules('position-3')) :?>
+						<jdoc:include type="modules" name="position-3" style="xhtml"/>
+					<?php endif; ?>
+				</nav>
+				<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 main_block">
+					<div class="main_slider">
+						<?php if($doc-> countModules('position-4')) :?>
+							<jdoc:include type="modules" name="position-4" style="xhtml"/>
+						<?php endif; ?>
+					</div>
+					<div class="content">
 						<jdoc:include type="component" />
 					</div>
 				</div>
-			</div>	
-		</section>
-		
-	</main>
+			</div>
+		</div>	
+	</div>
+
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-3 line-rigth">
-					<nav class="menu">
-						<ul>
-							<li class="menu__item"><a href="#" class="link">Главная</a></li>
-							<li class="menu__item"><a href="#" class="link">Каталог</a></li>
-							<li class="menu__item"><a href="#" class="link">О нас</a></li>
-							<li class="menu__item"><a href="#" class="link">Новости</a></li>
-							<li class="menu__item"><a href="#" class="link">Контакты</a></li>
-						</ul>
+				<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 line-rigth footer1_menu">
+					<nav class="footer__menu">
+						<?php if($doc-> countModules('position-6')) :?>
+							<jdoc:include type="modules" name="position-6" style="xhtml" class="menu__item"/>
+						<?php endif; ?>
 					</nav>
 				</div>
-				<div class="col-3 line-rigth">
-					<div class="register menu">
-						<ul>
-							<li class="menu__item"><a href="#" class="link">Вход</a></li>
-							<li class="menu__item"><a href="#" class="link">Регистрация</a></li>
-						</ul>
-					</div>
+				<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 line-rigth footer2_menu">
+					<nav class="footer__menu">
+						<?php if($doc-> countModules('position-7')) :?>
+							<jdoc:include type="modules" name="position-7" style="xhtml" class="menu__item"/>
+						<?php endif; ?>
+					</nav>
 				</div>
-				<div class="col-3 line-rigth">
-					<div class="footer__searth searth">
-						<input type="text" class="search__input" placeholder="Поиск...">
-						<button class="search__button">
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</button>
-					</div>
+				<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 line-rigth vk">
+					<?php if($doc-> countModules('position-8')) :?>
+						<jdoc:include type="modules" name="position-8" style="xhtml" class="menu__item"/>
+					<?php endif; ?>
 				</div>
-				<div class="col-3">
-					<div class="footer__logo">
-						<img src="templates/<?php echo $this->template; ?>/images/logo.png" alt="logo">
-						<div class="footer__phone phone">
-							<div class="phone__number"><i class="fa-solid fa-phone"></i> 8(800)000-00-00</div>
-						</div>
-						<div class="footer__logo__soc soc">
-							<ul class="soc__list">
-								<li class="menu__item" style="display: inline-block;padding: 0 10px 0 0;"><a href="#" class="link">info@mail.com</a></li>
-								<li class="soc__item"><a href="#" class="soc__link"><i class="fa-brands fa-facebook-f"></i></a></li>
-								<li class="soc__item"><a href="#" class="soc__link"><i class="fa-brands fa-twitter"></i></a></li>
-								<li class="soc__item"><a href="#" class="soc__link"><i class="fa-brands fa-telegram"></i></a></li>
-							</ul>
-						</div>
+				<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+					<?php if($doc-> countModules('position-9')) :?>
+						<jdoc:include type="modules" name="position-9" style="xhtml" class="menu__item"/>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<p>&#169; 2023 MyShop</p>
 					</div>
+					
 				</div>
 			</div>
 		</div>
